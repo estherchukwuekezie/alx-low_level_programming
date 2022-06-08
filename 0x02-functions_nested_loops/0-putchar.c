@@ -1,22 +1,19 @@
 #include "main.h"
-
 /**
- * main - prints the word Holberton
+ * main - Prints _putchar as a message.
  *
- * Return: 0 on success execution.
+ * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	char s[] = "-putchar";
-	int i = 0;
+	int str[] = {95, 112, 117, 116, 99, 104, 97, 114};
+	int count, sz;
 
-	while (s[i] != '\0')
+	sz = sizeof(str) / sizeof(int);
+	for (count = 0; count < sz; count++)
 	{
-		_putchar(s[i]);
-		i++;
+		_putchar(str[count]);
 	}
-	_putchar(10);
-
+	_putchar('\n');
 	return (0);
 }
