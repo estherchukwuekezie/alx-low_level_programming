@@ -1,24 +1,37 @@
 #include "main.h"
 
 /**
- * print_rev - prints given string in reverse
+ * _strlen -  swaps the values of two integers.
+ * @s: String input
  *
- * @s: passed pointer argument for string
+ * Return: Lenght of string
+ */
+
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
+/**
+ * print_rev - Printsca string in reverse
+ * @s: the string to print
+ *
  * Return: void
  */
 void print_rev(char *s)
 {
-	int len = 0;
+	int i = _strlen(s) - 1;
 
-	while (*(s + len) != '\0')
+	while (s[i])
 	{
-		len++;
-	}
-	len--;
-	while (len >= 0)
-	{
-		_putchar(*(s + len));
-		len--;
+		_putchar(s[i]);
+		i--;
 	}
 	_putchar('\n');
 }
