@@ -1,19 +1,21 @@
 #include "main.h"
 
+
 /**
- * _puts - print a given string to screen
+ * _puts - prints a string, followed by a new line, to stdout
+ * @s: String input
  *
- * @str: passed pointer argument for string
  * Return: void
  */
-void _puts(char *str)
-{
-	int len = 0;
 
-	while (*(str + len) != '\0')
+void _puts(char *s)
+{
+	int i = 0;
+
+	while (s[i])
 	{
-		_putchar(*(str + len));
-		len++;
+		_putchar(s[i]);
+		i++;
 	}
 	_putchar('\n');
 }
