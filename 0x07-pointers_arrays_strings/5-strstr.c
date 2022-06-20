@@ -1,22 +1,34 @@
 #include "main.h"
 
 /**
- * _strpbrk - locates first occurence of any bytes from accept in s
+ * _strstr - finds the first occurrence of the substring needle
+ *  in the string haystack
  *
- * @s: string to work on
- * @accept: pattern to match against
- * Return: pointer to the first match
+ * @haystack: string to work on
+ * @needle: substring to match
+ * Return: pointer to the first match or NULL
  */
-char *_strpbrk(char *s, char *accept)
+char *_strstr(char *haystack, char *needle)
 {
-	int i, j;
+	int i, j, match;
 
-	for (i = 0; s[i] != '\0'; i++)
+	if (*needle == '\0')
+		return (haystack);
+	for (i = 0; haystack[i] != '\0'; i++)
 	{
-		for (j = 0; accept[j] != '\0'; j++)
+		if (haystack[i] == *needle)
 		{
-			if (s[i] == accept[j])
-				return (s + i);
+			for (j = 1; needle[j] != '\0'; j++)
+			{
+				if (needle[j] != haystack[i + j])
+				{
+					match = 0;
+					break;
+				}
+				match = 1;
+			}
+			if (match)
+				return (haystack + i);
 		}
 	}
 	return (NULL);
