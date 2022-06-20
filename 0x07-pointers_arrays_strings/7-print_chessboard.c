@@ -1,35 +1,21 @@
 #include "main.h"
 
 /**
- * _strstr - finds the first occurrence of the substring needle
- *  in the string haystack
+ * print_chessboard - prints the chessboard
  *
- * @haystack: string to work on
- * @needle: substring to match
- * Return: pointer to the first match or NULL
+ * @a: 2-dimensional array
+ * Return: void
  */
-char *_strstr(char *haystack, char *needle)
+void print_chessboard(char (*a)[8])
 {
-	int i, j, match;
+	int i, j;
 
-	if (*needle == '\0')
-		return (haystack);
-	for (i = 0; haystack[i] != '\0'; i++)
+	for (i = 0; i < 8; i++)
 	{
-		if (haystack[i] == *needle)
+		for (j = 0; j < 8; j++)
 		{
-			for (j = 1; needle[j] != '\0'; j++)
-			{
-				if (needle[j] != haystack[i + j])
-				{
-					match = 0;
-					break;
-				}
-				match = 1;
-			}
-			if (match)
-				return (haystack + i);
+			_putchar(a[i][j]);
 		}
+		_putchar('\n');
 	}
-	return (NULL);
 }
